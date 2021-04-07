@@ -16,6 +16,10 @@
 
 package com.dso.ext
 
+import android.annotation.SuppressLint
+import java.text.SimpleDateFormat
+import java.util.*
+
 /**
  * 转换成大小格式
  */
@@ -46,4 +50,15 @@ fun Long.toTimeFormat(): String {
     } else {
         String.format("%02d:%02d:%02d", hour, min, sec)
     }
+}
+
+/**
+ * 转换成日期时间格式
+ */
+@SuppressLint("SimpleDateFormat")
+fun Long.toDateTimeFormat(): String {
+    val date = Date().apply {
+        time = this@toDateTimeFormat
+    }
+    return SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(date)
 }
