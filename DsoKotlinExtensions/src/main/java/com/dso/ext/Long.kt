@@ -60,5 +60,12 @@ fun Long.toDateTimeFormat(): String {
     val date = Date().apply {
         time = this@toDateTimeFormat
     }
-    return SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(date)
+    return SimpleDateFormat("yyyy 年 MM 月 dd 日 HH:mm:ss").format(date)
+}
+
+/**
+ * 转成比特率格式
+ */
+fun Long.toBitrateFormat(): String {
+    return "${this / 1000} kbps"
 }
