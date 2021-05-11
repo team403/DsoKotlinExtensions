@@ -25,4 +25,30 @@ dependencies {
 }
 ```
 将 Tag 替换为版本号，如 1.0.0-beta01
-	
+
+# 拓展函数
+
+| ArrayList 拓展函数 | 说明 |
+| ---- | ---- | 
+| fun <T> ArrayList<T>.previous(current: T?): T? | 返回 ArrayList 上一项 |    
+| fun <T> ArrayList<T>.next(current: T?): T? | 返回 ArrayList 下一项 |
+
+| ByteArray 拓展函数 | 说明 |
+| ---- | ---- | 
+| fun ByteArray.toHex(): String? | 字节数组转 16 进制字符串 |  
+
+| Int 拓展函数 | 说明 |
+| ---- | ---- | 
+| fun Int.colorMix(vararg colors: Int): Int | 多颜色混合 |
+
+| List 拓展函数 | 说明 |
+| ---- | ---- | 
+| fun <T> List<T>.toArrayList(): ArrayList<T> | List 转 ArrayList |
+| fun <T> List<T>.averageAssignFixLength(splitItemNum: Int): List<List<T>> | List 切割 |
+
+| Long 拓展函数 | 说明 |
+| ---- | ---- | 
+| fun Long.toSizeFormat(): String | 转换成大小格式 |
+| fun Long.toTimeFormat(): String | 转换成时间格式 |
+| fun Long.toDateTimeFormat(): String | 转换成日期时间格式 |
+| fun Long.toBitrateFormat(): String | 转成比特率格式 |

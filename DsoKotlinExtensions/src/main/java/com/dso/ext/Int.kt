@@ -16,4 +16,24 @@
 
 package com.dso.ext
 
+import android.graphics.Color
+
+/**
+ * 多颜色混合
+ */
+fun Int.colorMix(vararg colors: Int): Int {
+    var red = Color.red(this)
+    var green = Color.green(this)
+    var blue = Color.blue(this)
+    colors.forEach {
+        red += Color.red(it)
+        green += Color.green(it)
+        blue += Color.blue(it)
+    }
+    red /= (colors.size + 1)
+    green /= (colors.size + 1)
+    blue /= (colors.size + 1)
+    return Color.rgb(red, green, blue)
+}
+
 
