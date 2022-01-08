@@ -1,4 +1,4 @@
-package com.salt.ui.activity
+package com.dso.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

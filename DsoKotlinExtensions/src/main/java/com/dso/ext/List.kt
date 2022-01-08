@@ -16,6 +16,8 @@
 
 package com.dso.ext
 
+import java.util.*
+
 /**
  * List 转 ArrayList
  * @return ArrayList
@@ -54,4 +56,51 @@ fun <T> List<T>.averageAssignFixLength(splitItemNum: Int): List<List<T>> {
         }
     }
     return result
+}
+
+/**
+ * List 中上一项
+ */
+fun <T> List<T>.previous(current: T?): T? {
+    if (this.isEmpty() || current == null) {
+        return null
+    }
+    when (val position = this.indexOf(current)) {
+        -1 -> return null
+        0 -> {
+            this[this.lastIndex]?.let {
+                return it
+            }
+        }
+        else -> {
+            this[position - 1]?.let {
+                return it
+            }
+        }
+    }
+    return null
+}
+
+/**
+ * List 中下一项
+ * 传入当前项 [current]，返回下一项（可能为空）
+ */
+fun <T> List<T>.next(current: T?): T? {
+    if (this.isEmpty() || current == null) {
+        return null
+    }
+    when (val position = this.indexOf(current)) {
+        -1 -> return null
+        this.lastIndex -> {
+            this[0]?.let {
+                return it
+            }
+        }
+        else -> {
+            this[position + 1]?.let {
+                return it
+            }
+        }
+    }
+    return null
 }

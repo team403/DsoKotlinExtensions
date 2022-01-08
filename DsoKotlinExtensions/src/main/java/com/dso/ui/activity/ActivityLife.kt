@@ -1,4 +1,4 @@
-package com.salt.ui.activity
+package com.dso.ui.activity
 
 /**
  * @author Moriafly
